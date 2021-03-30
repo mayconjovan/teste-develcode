@@ -1,28 +1,34 @@
 package com.maycon.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	private String birthDate;
-	private String photo;
 	
+	@Temporal(TemporalType.DATE)
+	private Date birthDate;
+	
+	private String photo;
+
 	public User() {
-		
+
 	}
 
-	public User(Integer id, String name, String birthDate, String photo) {
+	public User(Integer id, String name, Date birthDate, String photo) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -46,11 +52,11 @@ public class User implements Serializable {
 		this.name = name;
 	}
 
-	public String getBirthDate() {
+	public Date getBirthDate() {
 		return birthDate;
 	}
 
-	public void setBirthDate(String birthDate) {
+	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
 
@@ -86,7 +92,5 @@ public class User implements Serializable {
 			return false;
 		return true;
 	}
-	
-	
-	
+
 }

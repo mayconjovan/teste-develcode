@@ -1,5 +1,6 @@
 package com.maycon.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,23 @@ public class UserService {
 		return obj.orElseThrow(
 				() -> new ObjectNotfoundException("Object not Found! Id: " + id + ", Type: " + User.class.getName()));
 	}
-	
+
 	public User insert(User obj) {
 		obj.setId(null);
 		return repository.save(obj);
+	}
+
+	public User update(User obj) {
+		getUser(obj.getId());
+		return repository.save(obj);
+	}
+
+	public void delete(Integer id) {
+		getUser(id);
+		repository.deleteById(id);
+	}
+
+	public List<User> findAll() {
+		return repository.findAll();
 	}
 }
