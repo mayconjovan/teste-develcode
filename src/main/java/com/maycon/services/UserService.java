@@ -20,4 +20,9 @@ public class UserService {
 		return obj.orElseThrow(
 				() -> new ObjectNotfoundException("Object not Found! Id: " + id + ", Type: " + User.class.getName()));
 	}
+	
+	public User insert(User obj) {
+		obj.setId(null);
+		return repository.save(obj);
+	}
 }

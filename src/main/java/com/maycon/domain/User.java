@@ -13,7 +13,7 @@ public class User implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer cod;
+	private Integer id;
 	private String name;
 	private String birthDate;
 	private String photo;
@@ -22,20 +22,20 @@ public class User implements Serializable {
 		
 	}
 
-	public User(Integer cod, String name, String birthDate, String photo) {
+	public User(Integer id, String name, String birthDate, String photo) {
 		super();
-		this.cod = cod;
+		this.id = id;
 		this.name = name;
 		this.birthDate = birthDate;
 		this.photo = photo;
 	}
 
-	public Integer getCod() {
-		return cod;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setCod(Integer cod) {
-		this.cod = cod;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -66,7 +66,7 @@ public class User implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((cod == null) ? 0 : cod.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -79,10 +79,10 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (cod == null) {
-			if (other.cod != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!cod.equals(other.cod))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
