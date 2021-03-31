@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.maycon.domain.User;
+import com.maycon.dto.UserDTO;
 import com.maycon.repositories.UserRepository;
 import com.maycon.services.exceptions.ObjectNotfoundException;
 
@@ -39,5 +40,9 @@ public class UserService {
 
 	public List<User> findAll() {
 		return repository.findAll();
+	}
+	
+	public User fromDTO(UserDTO objDto) {
+		return new User(objDto.getId(), objDto.getName(), objDto.getBirthDate(), objDto.getPhoto());
 	}
 }

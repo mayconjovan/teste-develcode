@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "32aebb1f-a259-41df-bda1-cd5510db0ffd",
+		"name": "test-develcode",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET USER",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://develcode-test.herokuapp.com/users/1",
+					"protocol": "https",
+					"host": [
+						"develcode-test",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST USER",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Alfredo\",\r\n    \"birthDate\" : \"2004-10-23\",\r\n    \"photo\" : \"D:/MyPhotos\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://develcode-test.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"develcode-test",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT USER",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Matheus\",\r\n    \"birthDate\" : \"2004-10-01\",\r\n    \"photo\" : \"C:/\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://develcode-test.herokuapp.com/users/1",
+					"protocol": "https",
+					"host": [
+						"develcode-test",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://develcode-test.herokuapp.com/users/1",
+					"protocol": "https",
+					"host": [
+						"develcode-test",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL USERS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://develcode-test.herokuapp.com/users",
+					"protocol": "https",
+					"host": [
+						"develcode-test",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
